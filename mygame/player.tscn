@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://b8hvnball0pl"]
+
+[ext_resource type="Script" path="res://ball.gd" id="1_ball"]
+[ext_resource type="Texture2D" path="res://redbouncyball_nobg.png" id="2_ball"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ball"]
+radius = 11.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_ball")
+unit = 0.27
+kill_y = 760.0
+cam_zoom = 2.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ball")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.066, 0.066)
+texture = ExtResource("2_ball")
+
+[node name="Camera2D" type="Camera2D" parent="."]
